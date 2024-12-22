@@ -1,5 +1,5 @@
 export const metaData = {
-  baseUrl: "https://nextfolio-template.vercel.app/",
+  baseUrl: "https://mortified.ru/",
   titleDefault: "Портфолио | Федоров Леонид",
   titleTemplate: "%s | Федоров Леонид",
   description:

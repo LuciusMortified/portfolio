@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { socialLinks } from "./config";
 
 export default function Page() {
   return (
