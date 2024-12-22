@@ -30,12 +30,12 @@ export async function GET(
     : `${metaData.baseUrl}/`;
 
   const feed = new Feed({
-    title: metaData.title,
-    description: metaData.description,
+    title: metaData.feedTitle,
+    description: metaData.feedDescription,
     id: BaseUrl,
     link: BaseUrl,
     copyright: `All rights reserved ${new Date().getFullYear()}, ${
-      metaData.title
+      metaData.author
     }`,
     generator: "Feed for Node.js",
     feedLinks: {

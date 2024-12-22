@@ -8,7 +8,6 @@ const navItems = {
   "/": { name: "Обо мне" },
   "/blog": { name: "Блог" },
   "/projects": { name: "Проекты" },
-  "/photos": { name: "Фото" },
 };
 
 export function Navbar() {

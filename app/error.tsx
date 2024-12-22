@@ -15,7 +15,7 @@ export default function Error({
 
   return (
     <div>
-      <p>Oops! Something went wrong... maybe try refreshing?</p>
+      <p>Упс! Что-то пошло не так... Попробуй перезагрузить страницу?</p>
     </div>
   );
 }

@@ -12,17 +12,17 @@ import { metaData } from "./config";
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
   title: {
-    default: metaData.title,
-    template: `%s | ${metaData.title}`,
+    default: metaData.titleDefault,
+    template: metaData.titleTemplate,
   },
   description: metaData.description,
   openGraph: {
     images: metaData.ogImage,
-    title: metaData.title,
+    title: metaData.titleDefault,
     description: metaData.description,
     url: metaData.baseUrl,
-    siteName: metaData.name,
-    locale: "en_US",
+    siteName: metaData.ogSiteName,
+    locale: "ru_RU",
     type: "website",
   },
   robots: {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: metaData.name,
+    title: metaData.titleDefault,
     card: "summary_large_image",
   },
   icons: {

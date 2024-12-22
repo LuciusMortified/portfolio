@@ -44,7 +44,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {metaData.title}
+        {metaData.author}
       </a>
       <style jsx>{`
         @media screen and (max-width: 480px) {

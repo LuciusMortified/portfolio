@@ -3,9 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
-import { TweetComponent } from "./tweet";
 import { CaptionComponent } from "./caption";
-import { YouTubeComponent } from "./youtube";
 import { ImageGrid } from "./image-grid";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
@@ -110,9 +108,7 @@ let components = {
   Image: RoundedImage,
   ImageGrid,
   a: CustomLink,
-  StaticTweet: TweetComponent,
   Caption: CaptionComponent,
-  YouTube: YouTubeComponent,
   code: Code,
   Table,
   del: Strikethrough,

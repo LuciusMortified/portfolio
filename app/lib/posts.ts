@@ -7,6 +7,7 @@ type Metadata = {
   summary: string;
   tags: string;
   image?: string;
+  link?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -36,7 +37,7 @@ function readMDXFile(filePath: string) {
   return parseFrontmatter(rawContent);
 }
 
-function getMDXData(dir: string) {
+function getMDXFilesData(dir: string) {
   let mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file));
@@ -50,8 +51,36 @@ function getMDXData(dir: string) {
   });
 }
 
+function getMDXFileData(filePath: string) {
+  try {
+    let file = filePath.endsWith(".mdx") ? filePath : `${filePath}.mdx`;
+    let { metadata, content } = readMDXFile(file);
+    let slug = path.basename(file, path.extname(file));
+
+    return {
+      metadata,
+      slug,
+      content,
+    };
+  } catch (err) {
+    return null;
+  }
+}
+
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), "content"));
+  return getMDXFilesData(path.join(process.cwd(), "content", "blog"));
+}
+
+export function getBlogPost(slug: string) {
+  return getMDXFileData(path.join(process.cwd(), "content", "blog", slug));
+}
+
+export function getProjectsPosts() {
+  return getMDXFilesData(path.join(process.cwd(), "content", "projects"));
+}
+
+export function getProjectsPost(slug: string) {
+  return getMDXFileData(path.join(process.cwd(), "content", "projects", slug));
 }
 
 export function formatDate(date: string, includeRelative = false) {
@@ -77,7 +106,7 @@ export function formatDate(date: string, includeRelative = false) {
     formattedDate = "Today";
   }
 
-  let fullDate = targetDate.toLocaleString("en-us", {
+  let fullDate = targetDate.toLocaleString("ru-RU", {
     month: "short",
     day: "numeric",
     year: "numeric",
@@ -88,4 +117,10 @@ export function formatDate(date: string, includeRelative = false) {
   }
 
   return `${fullDate} (${formattedDate})`;
+}
+
+export function formatDateToYear(date: string) {
+  let targetDate = new Date(date);
+  let formattedYear = targetDate.getFullYear();
+  return `${formattedYear}`;
 }

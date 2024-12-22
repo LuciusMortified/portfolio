@@ -1,10 +1,14 @@
 export const metaData = {
   baseUrl: "https://nextfolio-template.vercel.app/",
-  title: "Федоров Леонид",
-  ogImage: "/opengraph-image.png",
-  name: "Федоров Леонид",
+  titleDefault: "Портфолио | Федоров Леонид",
+  titleTemplate: "%s | Федоров Леонид",
   description:
-    "Сайт-портфолио бэкенд программиста Федорова Леонида.",
+    "Сайт-портфолио бэкенд программиста.",
+  feedTitle: 'Бэкенд разработчик | Федоров Леонид',
+  feedDescription: 'Блог бэкенд разработчика, занимаюсь разработкой высоконагруженных систем, а в свободное от работы время делаю игры.',
+  author: 'Федоров Леонид',
+  ogImage: "/logo.png",
+  ogSiteName: "Портфолио",
 };
 
 export const socialLinks = {
